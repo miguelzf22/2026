@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
+    <!-- Cabeçalho para iniciar HTML -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Exemplo Exercício Desvio Condicional – Validação Número</title>
-        <link rel="stylesheet" href="style.css">
+
+        <!-- Pega o link do CSS -->
+        <link rel="stylesheet" href="style.css"> 
     </head>
+
+    <!-- Corpo do HTML -->
     <body>
         
+        <!-- Div com classe Container para melhor organização -->
         <div class="container">
+
+            <!-- Título chamativo do site -->
             <h1>Validação de número</h1>
+
+            <!-- Caixa de input de números -->
             <input id="numero" value="" type="number" placeholder="Digite um número">
+
+            <!-- Botão Validar, ligado à função validarNumero() -->
             <button onclick="validarNumero()">Validar</button>
+
+            <!-- Tag de Parágrafo para a mensagem -->
             <p id="mensagem"></p>
         </div>
 
+        <!-- Pega o Script em JavaScript -->
         <script src="script.js"></script>
     </body>
 </html>

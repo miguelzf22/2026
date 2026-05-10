@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1 style="user-select: none;">Bilheteria</h1>
+        </header>
+        <div class="container">
+            
+            <div class="funcoes">
+                <input type="text" id="convidado" placeholder="Insira o nome" onkeydown="bilheteria_inserir_nome_keydown()">
+                <button onclick="bilheteria_inserir_nome()">Enviar Nome</button>
+                <button onclick="bilheteria_enviar()">Atualizar Lista</button>
+                <button onclick="bilheteria_remover()">Remover Nome</button>
+                <p id="mensagem"></p>
+            </div>
+            
+            <div class="lista">
+                <ul style="list-style: none; user-select: none;" id="lista-de-convidados"></ul>
+            </div>
+            
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

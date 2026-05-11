@@ -7,6 +7,19 @@ document.getElementById('convidado').addEventListener('keydown', function(e){
     }
 })
 
+function bilheteria_enviar(){
+
+    const lista = document.getElementById('lista-de-convidados')
+    lista.innerHTML = '' // Limpa a lista, para depois atualizá-la
+
+    for(let item of convidados){
+        // Para cada iteração, cria um <li> com o nome do convidado
+        let item_li = document.createElement('li') 
+        item_li.textContent = item
+        document.getElementById('lista-de-convidados').appendChild(item_li)
+    }
+}
+
 function bilheteria_inserir_nome(){
     let nome = document.getElementById("convidado").value; // Pega o valor do input
     if(nome!==""){
@@ -15,6 +28,7 @@ function bilheteria_inserir_nome(){
             document.getElementById("mensagem").textContent = `Convidado ${nome} adicionado a Lista!`
             document.getElementById("mensagem").style.color = 'green'
             document.getElementById("convidado").value = '' // Reseta o Input
+            bilheteria_enviar() // Atualiza a lista
         } else { // Caso o limite da lista tenha sido atingido
             document.getElementById("mensagem").textContent = "Lotação esgotada! Máximo de 5 pessoas!"
             document.getElementById("mensagem").style.color = 'orange'
@@ -23,18 +37,6 @@ function bilheteria_inserir_nome(){
     } else { // Caso o input esteja vazio
         document.getElementById("mensagem").textContent = "Está vazio! Insira o nome."
         document.getElementById("mensagem").style.color = "red"
-    }
-}
-
-function bilheteria_enviar(){
-    const lista = document.getElementById('lista-de-convidados')
-    lista.innerHTML = ''
-
-    for(let item of convidados){
-        // Para cada iteração, cria um <li> com o nome do convidado
-        let item_li = document.createElement('li') 
-        item_li.textContent = item
-        document.getElementById('lista-de-convidados').appendChild(item_li)
     }
 }
 
@@ -47,6 +49,7 @@ function bilheteria_remover(){
             document.getElementById("mensagem").textContent = `Convidado ${nome} removido da Lista!`
             document.getElementById("mensagem").style.color = 'black'
             document.getElementById("convidado").value = '' // Reseta o valor do input
+            bilheteria_enviar() // Atualiza a lista
         } else { // Caso o nome não seja encontrado
             document.getElementById("mensagem").textContent = `Nome não encontrado na lista.`
             document.getElementById("mensagem").style.color = 'orange'
